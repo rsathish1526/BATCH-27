@@ -1,284 +1,230 @@
 
-Task:3
 
-//1. Student Login Check
-//Ask username and password using prompt().
-//If username = "admin" and password = "1234"
-//→ print "Login Success"
-//Else print "Invalid User"
+//Task:4
 
-let username = prompt("Enter username:");
-let password = prompt("Enter password:");
+//Task 1 — Smart Attendance Checker
+//Concept:
+//if else
+//logical operator
+//function
+//Scenario:
+//A student can enter exam hall only if:
+//attendance >= 75
+//fees paid = true
+//Expected:
+//Allowed for Exam
+//Otherwise:
+//Not Allowed
+//OUTPUT:
 
-if (username === "admin" && password === "1234") {console.log("Login Success");} else { console.log("Invalid User");}
-
-//2. ATM Balance System
-//Create a variable balance = 5000
-//Withdraw amount using prompt()
-//If amount less than balance → "Withdraw Success"
-//Else → "Insufficient Balance"
-
-let balance = 5000;
-let amount = Number(prompt("Enter withdraw amount:"));
-
-if (amount < balance) {console.log("Withdraw Success");} 
-else {console.log("Insufficient Balance");}
-
-
-//3. Traffic Signal Project
-//Using switch
-//"red" → stop
-//"yellow" → ready
-//"green" → go
-
-let signal = prompt("Enter signal color:");
-switch(signal) {
-    case "red":
-        console.log("Stop");break;
-
-    case "yellow":console.log("Ready");break;
-
-    case "green":console.log("Go");break;
-
-    default:console.log("Invalid Signal");}
+function checkExamEligibility(attendance, feesPaid) 
+{
+if (attendance >= 75 && feesPaid === true) {console.log("Allowed for Exam");} 
+else {console.log("Not Allowed");}
+}
+checkExamEligibility(80, true);
 
 
-//4. Age Eligibility Checker
-//Take age from user.
-//age >= 18 → "Eligible for Vote"
-//Else → "Not Eligible"
+//Task 2 — Mobile Password Strength Checker
+//Concept:
+//string
+//conditions
+//Requirement:
+//Check password:
+//minimum 8 characters
+//should contain number
+//should contain uppercase
+//Example:
+//Abc12345
+//Output:
+//Strong Password
 
-let age = Number(prompt("Enter age:"));
-if (age >= 18) 
-    {console.log("Eligible for Vote");}
+// Task 2 — Mobile Password Strength Checker
+
+let password = "Abc12345";
+let hasNumber = false;
+let hasUppercase = false;
+
+for(let char of password) 
+{
+if (char >= '0' && char <= '9') 
+{hasNumber = true;}
+if (char >= 'A' && char <= 'Z') 
+{hasUppercase = true;}
+}
+if(password.length >= 8 && hasNumber && hasUppercase) 
+{console.log("Strong Password");} 
+else{console.log("Weak Password");}
+
+//Task 3 — Find Second Largest Number
+//Concept:
+//loop
+//conditions
+//variables
+//Input:
+//[10,50,80,20,90,70]
+//Output:
+//80
+
+let numbers = [10, 50, 80, 20, 90, 70];
+let largest = 0;
+let secondLargest = 0;
+
+for(let num of numbers) 
+    {if (num > largest) 
+{
+secondLargest = largest;
+ largest = num;
+    } 
+else if (num > secondLargest && num !== largest) 
+    {secondLargest = num;}
+}
+console.log(secondLargest);
+
+//Task 4 — Bus Seat Booking System
+//Concept:
+//array
+//loop
+//conditions
+//Requirement:
+//Create 10 seats.
+//If seat booked:
+//Seat Already Booked
+//Else:
+//Seat Booked Successfully
+
+let seats = [1,2,3,4,5,6,7,8,9,10];
+let bookedSeat = 4;
+if (seats[bookedSeat - 1] === "Booked") 
+    {console.log("Seat Already Booked");} 
+else {seats[bookedSeat - 1] = "Booked";console.log("Seat Booked Successfully");}
+console.log(seats);
+
+//Task 5 — ATM Cash Withdraw Logic
+//Concept:
+//function
+//return
+//conditions
+//Rules:
+//balance = 10000
+//user cannot withdraw more than balance
+//minimum balance should maintain 1000
+//Example:
+//Withdraw:
+//9500
+//Output:
+//Insufficient Balance
+
+function withdraw(balance, amount) 
+{if (amount > balance || balance - amount < 1000) 
+{return "Insufficient Balance";} 
+else {return "Withdraw Success";}}
+console.log(withdraw(10000, 9500));
+
+//Task 6 — Product Search Engine
+//Concept:
+//array
+//for of
+//string methods
+//Requirement:
+//Search product from array.
+//Example:
+//["iphone","samsung","realme","oppo"]
+//Search:
+//realme
+//Output:
+//Product Found
+
+let products = ["iphone", "samsung", "realme", "oppo"];
+let search = "realme";
+let found = false;
+for (let item of products) 
+    {if (item.toLowerCase() === search.toLowerCase()) {found = true;}}
+
+if (found) 
+{console.log("Product Found");
+}
+else{console.log("Product Not Found");}
+
+//Task 7 — Voting Eligibility System
+//Concept:
+//nested if
+//logical operators
+//Rules:
+//Person can vote only if:
+//age >= 18
+//has voter id
+//citizenship = Indian
+
+// Task 7 — Voting Eligibility System
+
+let age = 20;
+let hasVoterId = true;
+let citizenship = "Indian";
+
+if (age >= 18) {
+
+if (hasVoterId && citizenship === "Indian"){console.log("Eligible to Vote");} 
+else {console.log("Not Eligible");}
+} 
 else{console.log("Not Eligible");}
 
+//Task 8 — Online Food Order Bill
+//Concept:
+//function
+//parameters
+//arithmetic operators
+//Requirement:
+//Calculate:
+//food price
+//GST
+//delivery charge
+//discount
+//Final Output:
+//Total Bill : ₹450
 
-//5. Shopping Discount System
-//Take product price.
-//Above 5000 → 20% discount
-//Above 3000 → 10% discount
-//Else → no discount
-
-let price = Number(prompt("Enter product price:"));
-
-if (price > 5000) 
-    {console.log("20% Discount");} 
-else if (price > 3000) 
-    {console.log("10% Discount");}
- else {console.log("No Discount");}
-
-//6. Password Strength Checker
-//Check password length.
-//length >= 8 → "Strong Password"
-//Else → "Weak Password"
-
-let pass = prompt("Enter password:");
-
-if (pass.length >= 8) 
-    {console.log("Strong Password");}
- else 
-    {console.log("Weak Password");}
-
-//7. Mobile Battery Warning
-//Take battery percentage.
-//<= 10 → "Battery Low"
-//<= 50 → "Battery Medium"
-//Else → "Battery Full"
-
-let battery = Number(prompt("Enter battery percentage:"));
-
-if (battery <= 10) 
-    {console.log("Battery Low");} 
-else if (battery <= 50) 
-    {console.log("Battery Medium");} 
-else 
-    {console.log("Battery Full");}
-
-//8. Employee Salary Bonus
-//Create salary variable.
-//salary >= 50000 → 15% bonus
-//salary >= 30000 → 10% bonus
-//Else → 5% bonus
-
-let salary = Number(prompt("Enter salary:"));
-
-if (salary >= 50000) 
-    {console.log("15% Bonus");} 
-else if (salary >= 30000) 
-    {console.log("10% Bonus");} 
-else 
-    {console.log("5% Bonus");}
-
-//9. Online Food Order
-//Take order amount.
-//Above 499 → "Free Delivery"
-//Else → "Delivery Charge Added"
-
-let orderAmount = Number(prompt("Enter order amount:"));
-
-if (orderAmount > 499) 
-    {console.log("Free Delivery");} 
-else 
-    {console.log("Delivery Charge Added");}
-
-//10. Movie Ticket Booking
-//Take age.
-//Below 5 → Free ticket
-//Below 18 → Child ticket
-//Else → Adult ticket
-
-let movieAge = Number(prompt("Enter age:"));
-
-if (movieAge < 5) 
-    {console.log("Free Ticket");} 
-else if (movieAge < 18) 
-    {console.log("Child Ticket");} 
-else 
-    {console.log("Adult Ticket");}
-
-
-//11. Instagram Likes Counter
-//Using for loop
-//Print:
-//Like 1
-//Like 2
-//Like 3
-//Like 4
-//Like 5
-
-for (let i = 1; i <= 5; i++) 
-    {console.log("Like " + i);}
-
-//12. Countdown Timer
-//Using while loop
-//Print:
-//5
-//4
-//3
-//2
-//1
-//Start
-
-let count = 5;
-
-while (count >= 1) 
-    {console.log(count);
-    count--;}
-console.log("Start");
-
-//13. OTP Verification
-//Create OTP = 1234
-//Take input from user.
-//Correct → "OTP Verified"
-//Wrong → "Invalid OTP"
-
-let otp = 1234;
-let userOtp = Number(prompt("Enter OTP:"));
-
-if (userOtp === otp) 
-    {console.log("OTP Verified");} 
-else 
-    {console.log("Invalid OTP");}
-
-//14. E-commerce Cart Total
-//Array:
-//let cart = [200,500,1000,300]
-//Find total cart value using loop.
-
-let cart = [200, 500, 1000, 300];
-let total = 0;
-
-for (let item of cart)
-    {total += item;}
-console.log("Total Cart Value:", total);
-
-//15. Student Mark Grade System
-//Take mark.
-//90+ → A Grade
-//70+ → B Grade
-//50+ → C Grade
-//Else → Fail
-
-let mark = Number(prompt("Enter mark:"));
-if (mark >= 90)
-    {console.log("A Grade");} 
-else if (mark >= 70) 
-    {console.log("B Grade");} 
-else if (mark >= 50) 
-    {console.log("C Grade");} 
-else 
-    {console.log("Fail");}
-
-//16. Netflix Subscription Checker
-//Boolean variable:
-//let subscription = true
-//true → "Watch Movie"
-//false → "Buy Subscription"
-
-let subscription = true;
-if (subscription) 
-    {console.log("Watch Movie");} 
-else 
-    {console.log("Buy Subscription");}
-
-//17. Product Stock Checker
-//let stock = 0
-//stock > 0 → "Product Available"
-//Else → "Out of Stock"
-
-let stock = 0;
-if (stock > 0) 
-    {console.log("Product Available");} 
-else 
-    {console.log("Out of Stock");}
-
-//18. Weather App Condition
-//Using switch
-//sunny" → "Go Outside"
-//"rainy" → "Take Umbrella"
-//"cold" → "Wear Jacket"
-
-let weather = prompt("Enter weather:");
-switch(weather) 
+function calculateBill(foodPrice, gst, deliveryCharge, discount) 
 {
-case "sunny":
-        console.log("Go Outside");
-        break;
-
-    case "rainy":
-        console.log("Take Umbrella");
-        break;
-case "cold":
-        console.log("Wear Jacket");
-        break;
-default:
-        console.log("Invalid Weather");
+let total =foodPrice +gst + deliveryCharge - discount;
+return "Total Bill : ₹" + total;
 }
+console.log(calculateBill(400, 30, 40, 20));
 
-//19. User Profile Object
-//Create object:
-//let user = {
-   //name : "Navi",
-   //age : 20,
-   //city : "Bangalore"
-//}
-//Print all values using for in loop.
+//Task 9 — Reverse Word Without reverse()
+//Concept:
+//loop
+//string
+//Input:
+//javascript
+//Output:
+//tpircsavaj
 
-let user = 
+let word = "javascript";
+let reversed = "";
+
+for (let i = word.length - 1; i >= 0; i--) 
+{reversed += word[i];}
+console.log(reversed);
+
+//Task 10 — Mini Instagram Like System
+//Concept:
+//variable
+//function
+//ternary operator
+//Requirement:
+//When user clicks like:
+//Liked ❤️
+//Else:
+//Like 🤍
+//Also maintain total likes count
+
+let isLiked = true;
+let totalLikes = 100;
+function likeSystem() 
 {
-name: "Navi",
-    age: 20,
- city: "Bangalore"
-};
-for (let key in user) 
-    {console.log(user[key]);}
-
-//20. WhatsApp Chat Array
-//Array:
-//let chats = ["hi","hello","where are you","ok"]
-//Print each message using for of loop.
-
-let chats = ["hi", "hello", "where are you", "ok"];
-for(let message of chats) 
-{console.log(message);}
+isLiked = !isLiked;
+ isLiked ? totalLikes++ : totalLikes--;
+ console.log(isLiked ? "Liked ❤️" : "Like 🤍");
+console.log("Total Likes:", totalLikes);
+}
+likeSystem();
