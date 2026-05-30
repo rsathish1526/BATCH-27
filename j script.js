@@ -983,197 +983,455 @@
 // likeSystem();
 
 
-TASK:5
+// TASK:5
+
+// // Task 1
+// let frontEnd = ["HTML", "CSS"];
+// let backEnd = ["Node", "MongoDB"];
+// let fullStack = [...frontEnd, ...backEnd];
+// console.log(fullStack);
+// // Output: ["HTML","CSS","Node","MongoDB"]
+
+// // Task 2
+// let original = [1,2,3];
+// let copied = [...original];
+// copied.push(4);
+// console.log("Original:", original);
+// console.log("Copied:", copied);
+// // Output: Original: [1,2,3], Copied: [1,2,3,4]
+
+// // Task 3
+// let student1 = { name: "Rahul" };
+// let student2 = { role: "Developer" };
+// let mergedStudent = { ...student1, ...student2 };
+// console.log(mergedStudent);
+// // Output: { name: "Rahul", role: "Developer" }
+
+// // Task 4
+// function total(a,b,...rest){
+//  console.log("a =",a);
+//  console.log("b =",b);
+//  console.log("Remaining Values =",rest);
+//  console.log("Count =",rest.length);
+// }
+// total(1,2,3,4,5,6,7,8);
+// // Output: a = 1, b = 2, Remaining Values = [3,4,5,6,7,8], Count = 6
+
+// // Task 5
+// let colors = ["red","green","blue","yellow"];
+// let [redColor,greenColor,blueColor,yellowColor] = colors;
+// console.log(blueColor);
+// // Output: blue
+
+// // Task 6
+// let nestedData = [1,[2,[3,[4]]]];
+// let [value1,[value2,[value3,[value4]]]] = nestedData;
+// console.log(value1,value2,value3,value4);
+// // Output: 1 2 3 4
+
+// // Task 7
+// let mobile = { brand:"Samsung", price:20000, color:"black" };
+// let { brand, price, color } = mobile;
+// console.log(brand,color);
+// // Output: Samsung black
+
+// // Task 8
+// let numbers = [1,2,3];
+// numbers.push(4,5,6);
+// numbers.pop();
+// console.log(numbers);
+// // Output: [1,2,3,4,5]
+
+// // Task 9
+// let fruits = ["banana","orange"];
+// fruits.unshift("apple");
+// fruits.shift();
+// console.log(fruits);
+// // Output: ["banana","orange"]
+
+// // Task 10
+// let spliceArray = [1,2,30,40,5,6];
+// spliceArray.splice(2,2,3,4);
+// console.log(spliceArray);
+// // Output: [1,2,3,4,5,6]
+
+// // Task 11
+// let firstArray = [1,2];
+// let secondArray = [3,4];
+// let concatResult = firstArray.concat(secondArray,[5,6]);
+// console.log(concatResult);
+// // Output: [1,2,3,4,5,6]
+
+// // Task 12
+// let marks = [10,20,30,40,50,60];
+// let extractedMarks = marks.slice(2,5);
+// console.log(extractedMarks);
+// // Output: [30,40,50]
+
+// // Task 13
+// let nestedArray = [1,[2,[3,[4,[5]]]]];
+// let flatArray = nestedArray.flat(Infinity);
+// console.log(flatArray);
+// // Output: [1,2,3,4,5]
+
+// // Task 14
+// let fillArray = [1,2,3,4,5];
+// fillArray.fill("done",3);
+// console.log(fillArray);
+// // Output: [1,2,3,"done","done"]
+
+// // Task 15
+// let values = [10,20,30,40];
+// console.log(values.includes(20));
+// console.log(values.includes(100));
+// // Output: true, false
+
+// // Task 16
+// let indexArray = [1,2,3,4,3,2];
+// console.log(indexArray.indexOf(3));
+// console.log(indexArray.indexOf(2));
+// // Output: 2, 1
+
+// // Task 17
+// let lastIndexArray = [1,2,3,4,3,2];
+// console.log(lastIndexArray.lastIndexOf(3));
+// console.log(lastIndexArray.lastIndexOf(2));
+// // Output: 4, 5
+
+// // Task 18
+// let nums = [100,2,55,1,9];
+// console.log(nums.sort());
+// nums.sort((a,b)=>a-b);
+// console.log(nums);
+// // Output: [1,100,2,55,9], [1,2,9,55,100]
+
+// // Task 19
+// let letters = ["a","b","c","d"];
+// letters.reverse();
+// console.log(letters);
+// // Output: ["d","c","b","a"]
+
+// // Task 20
+// let students = ["Rahul","Ajay","Kumar"];
+// students.push("Naveen");
+// students.splice(1,1);
+// students.splice(1,0,"Arun");
+// students.reverse();
+// console.log(students);
+// // Output: ["Naveen","Kumar","Arun","Rahul"]
+
+// // Task 21
+// let cart = ["Shoes","Watch","Phone"];
+// cart.push("Laptop");
+// cart.splice(1,1);
+// console.log(cart.includes("Phone"));
+// console.log("Total Items:", cart.length);
+// console.log(cart);
+// // Output: true, Total Items: 3, ["Shoes","Phone","Laptop"]
+
+// // Task 22
+// let employee = { name:"Naveen", role:"Web Developer", salary:"5LPA" };
+// let { name, role, salary } = employee;
+// console.log(name,role,salary);
+// let copiedEmployee = { ...employee };
+// copiedEmployee.salary = "8LPA";
+// console.log("Original:", employee);
+// console.log("Copied:", copiedEmployee);
+// // Output: Naveen Web Developer 5LPA, Original salary 5LPA, Copied salary 8LPA
+
+// // Task 23
+// function company(empName,...skills){
+//  console.log("Employee Name:", empName);
+//  console.log("Skills:", skills);
+//  console.log("Total Skills:", skills.length);
+// }
+// company("Naveen","HTML","CSS","JS","React");
+// // Output: Employee Name: Naveen, Skills: [HTML,CSS,JS,React], Total Skills: 4
+
+// // Task 24
+// let analyzerData = [1,2,3,4,5,6,7,8,9,10];
+// let firstFive = analyzerData.slice(0,5);
+// console.log(firstFive);
+// analyzerData.reverse();
+// console.log(analyzerData);
+// console.log(analyzerData.includes(7));
+// console.log(analyzerData.indexOf(10));
+// // Output: [1,2,3,4,5], [10,9,8,7,6,5,4,3,2,1], true, 0
+
+// // Task 25
+// let users = [
+//  {name:"Rahul",role:"Developer"},
+//  {name:"Ajay",role:"Designer"},
+//  {name:"Kumar",role:"Tester"}
+// ];
+// users.push({name:"Naveen",role:"Manager"});
+// users.pop();
+// let newUsers = [
+//  {name:"Arun",role:"HR"},
+//  {name:"Vijay",role:"Support"}
+// ];
+// let finalUsers = [...users,...newUsers];
+// for(let user of finalUsers){
+//  console.log(user.name);
+// }
+// finalUsers.reverse();
+// console.log(finalUsers);
+// // Output: Rahul, Ajay, Kumar, Arun, Vijay
+
+// TASK:6
+
+// // Task 1
+// let employees = [
+//   {name:"john", salary:200000},
+//   {name:"rahul", salary:500000},
+//   {name:"siva", salary:700000}
+// ];
+
+// employees
+//   .filter(emp => emp.salary > 300000)
+//   .map(emp => console.log(`Congrats ${emp.name}`));// Output: Congrats rahul, Congrats siva
+
+// // Task 2
+// let cart = [1200, 3400, 500, 999];
+
+// let total = cart.reduce((sum, item) => sum + item, 0);
+
+// console.log(total);// Output: 6099
+
+// // Task 3
+// let user = "naveen";
+
+// let formattedUser = user.slice(0,1).toUpperCase() + user.slice(1);
+
+// console.log(formattedUser);// Output: Naveen
+
+// // Task 4
+// let otp = "560890";
+
+// console.log(otp.includes("0") ? "Valid OTP" : "Invalid OTP");// Output: Valid OTP
+
+// // Task 5
+// let orders = ["burger","pizza"];
+
+// orders.push("shawarma");
+// orders.pop();
+
+// console.log(orders);// Output: ["burger","pizza"]
+
+// // Task 6
+// let marks = [40,50,70,80];
+
+// let result = marks.every(mark => mark >= 35);
+
+// console.log(result);// Output: true
+
+// // Task 7
+// let customer = [
+//   {name:"arun", purchase:5000},
+//   {name:"vijay", purchase:15000},
+//   {name:"surya", purchase:25000}
+// ];
+
+// let vip = customer.find(c => c.purchase > 10000);
+
+// console.log(vip.name);// Output: vijay
+
+// // Task 8
+// let msg = "hello";
+
+// let reversedMsg = msg.split("").reverse().join("");
+
+// console.log(reversedMsg);// Output: olleh
+
+// // Task 9
+// let products = ["tv","laptop","mobile","watch"];
+
+// console.log(products.indexOf("mobile"));// Output: 2
+
+// // Task 10
+// let marksArray = [99,45,12,67,89];
+
+// marksArray.sort((a,b) => a-b);
+
+// console.log(marksArray);// Output: [12,45,67,89,99]
+
+// // Task 11
+// let movies = ["Jailer","Leo","Vikram"];
+
+// let movieExists = movies.some(movie => movie === "Leo");
+
+// console.log(movieExists);// Output: true
+
+// // Task 12
+// let num = "6383366774";
+
+// console.log(num.slice(-4));// Output: 6774
+
+// // Task 13
+// let mark = 78;
+
+// console.log(mark >= 35 ? "Pass" : "Fail");// Output: Pass
+
+// // Task 14
+// function totalFare(baseFare, extraKm){
+//   return baseFare + extraKm;
+// }
+
+// console.log(totalFare(100,50));// Output: 150
+
+// // Task 15
+// let tag = "web developer";
+
+// console.log(tag.replaceAll(" ","_"));// Output: web_developer
+
+// // Task 16
+// let kidsMovies = [
+//   {name:"A", age:13},
+//   {name:"B", age:18},
+//   {name:"C", age:10}
+// ];
+
+// kidsMovies
+//   .filter(movie => movie.age < 18)
+//   .forEach(movie => console.log(movie.name));// Output: A, C
+
+// // Task 17
+// let product = "iphone";
+
+// console.log(product.startsWith("i"));// Output: true
+
+// // Task 18
+// let groups = ["office","friends","family"];
+
+// groups.forEach((group,index) => {
+//   console.log(index + 1, group);
+// });// Output: 1 office, 2 friends, 3 family
+
+// // Task 19
+// let salary = [20000,50000,70000,10000];
+
+// let highestSalary = salary.reduce((max,value) => value > max ? value : max);
+
+// console.log(highestSalary);// Output: 70000
+
+// // Task 20
+// let password = "navi@123";
+
+// if(password.includes("@") && password.length >= 8){
+//   console.log("Strong Password");
+// }else{
+//   console.log("Weak Password");
+// }
+// // Output: Strong Password
+
+TASK: 7
 
 // Task 1
-let frontEnd = ["HTML", "CSS"];
-let backEnd = ["Node", "MongoDB"];
-let fullStack = [...frontEnd, ...backEnd];
-console.log(fullStack);
-// Output: ["HTML","CSS","Node","MongoDB"]
+fetch("https://fakestoreapi.com/products/")
+.then(res => res.json())
+.then(products => {
+  products
+  .filter(product => product.price > 100 && product.category === "electronics")
+  .forEach(product => {
+    console.log(product.title, product.price);
+  });
+});// Output: Displays electronics products with price greater than 100
 
 // Task 2
-let original = [1,2,3];
-let copied = [...original];
-copied.push(4);
-console.log("Original:", original);
-console.log("Copied:", copied);
-// Output: Original: [1,2,3], Copied: [1,2,3,4]
+let cart = [
+  {product:"Shoes", price:2000, qty:2},
+  {product:"Watch", price:1500, qty:1},
+  {product:"Bag", price:1000, qty:3}
+];
+
+let totalBill = cart.reduce((total,item) => {
+  return total + (item.price * item.qty);
+},0);
+
+console.log(totalBill);// Output: 8500
 
 // Task 3
-let student1 = { name: "Rahul" };
-let student2 = { role: "Developer" };
-let mergedStudent = { ...student1, ...student2 };
-console.log(mergedStudent);
-// Output: { name: "Rahul", role: "Developer" }
+let employees = [
+  {name:"John", salary:25000},
+  {name:"Sam", salary:50000},
+  {name:"Ravi", salary:45000},
+  {name:"Kumar", salary:30000}
+];
+
+employees
+.filter(emp => emp.salary > 40000)
+.forEach(emp => console.log(emp.name));// Output: Sam, Ravi
 
 // Task 4
-function total(a,b,...rest){
- console.log("a =",a);
- console.log("b =",b);
- console.log("Remaining Values =",rest);
- console.log("Count =",rest.length);
-}
-total(1,2,3,4,5,6,7,8);
-// Output: a = 1, b = 2, Remaining Values = [3,4,5,6,7,8], Count = 6
+let hotels = [
+  {hotel:"A2B", rating:4.1},
+  {hotel:"KFC", rating:4.7},
+  {hotel:"Dominos", rating:4.3}
+];
+
+let bestHotel = hotels.find(hotel => hotel.rating > 4.5);
+
+console.log(bestHotel.hotel);// Output: KFC
 
 // Task 5
-let colors = ["red","green","blue","yellow"];
-let [redColor,greenColor,blueColor,yellowColor] = colors;
-console.log(blueColor);
-// Output: blue
+let marks = [45,67,89,90,34];
+
+let passed = marks.every(mark => mark >= 35);
+
+console.log(passed);// Output: false
 
 // Task 6
-let nestedData = [1,[2,[3,[4]]]];
-let [value1,[value2,[value3,[value4]]]] = nestedData;
-console.log(value1,value2,value3,value4);
-// Output: 1 2 3 4
+let otpList = [1234,4567,7890,9876];
+
+console.log(otpList.includes(4567));// Output: true
 
 // Task 7
-let mobile = { brand:"Samsung", price:20000, color:"black" };
-let { brand, price, color } = mobile;
-console.log(brand,color);
-// Output: Samsung black
+let count = 10;
+
+let timer = setInterval(() => {
+  console.log(count);
+
+  if(count === 0){
+    clearInterval(timer);
+    console.log("Booking Closed");
+  }
+
+  count--;
+},1000);// Output: 10,9,8,7,6,5,4,3,2,1,0, Booking Closed
 
 // Task 8
-let numbers = [1,2,3];
-numbers.push(4,5,6);
-numbers.pop();
-console.log(numbers);
-// Output: [1,2,3,4,5]
+let likes = 0;
+
+let likeCounter = setInterval(() => {
+  likes++;
+  console.log("Likes :", likes);
+
+  if(likes === 10){
+    clearInterval(likeCounter);
+  }
+},1000);// Output: Likes : 1, Likes : 2, ..., Likes : 10
 
 // Task 9
-let fruits = ["banana","orange"];
-fruits.unshift("apple");
-fruits.shift();
-console.log(fruits);
-// Output: ["banana","orange"]
+let username = "admin";
+let password = "12345";
+
+if(username === "admin" && password === "12345"){
+  console.log("Login Success");
+}else{
+  console.log("Invalid Credentials");
+}// Output: Login Success
 
 // Task 10
-let spliceArray = [1,2,30,40,5,6];
-spliceArray.splice(2,2,3,4);
-console.log(spliceArray);
-// Output: [1,2,3,4,5,6]
+let internet = true;
 
-// Task 11
-let firstArray = [1,2];
-let secondArray = [3,4];
-let concatResult = firstArray.concat(secondArray,[5,6]);
-console.log(concatResult);
-// Output: [1,2,3,4,5,6]
+let weatherPromise = new Promise((resolve,reject) => {
+  if(internet){
+    resolve("Weather Data");
+  }else{
+    reject("No Internet");
+  }
+});
 
-// Task 12
-let marks = [10,20,30,40,50,60];
-let extractedMarks = marks.slice(2,5);
-console.log(extractedMarks);
-// Output: [30,40,50]
-
-// Task 13
-let nestedArray = [1,[2,[3,[4,[5]]]]];
-let flatArray = nestedArray.flat(Infinity);
-console.log(flatArray);
-// Output: [1,2,3,4,5]
-
-// Task 14
-let fillArray = [1,2,3,4,5];
-fillArray.fill("done",3);
-console.log(fillArray);
-// Output: [1,2,3,"done","done"]
-
-// Task 15
-let values = [10,20,30,40];
-console.log(values.includes(20));
-console.log(values.includes(100));
-// Output: true, false
-
-// Task 16
-let indexArray = [1,2,3,4,3,2];
-console.log(indexArray.indexOf(3));
-console.log(indexArray.indexOf(2));
-// Output: 2, 1
-
-// Task 17
-let lastIndexArray = [1,2,3,4,3,2];
-console.log(lastIndexArray.lastIndexOf(3));
-console.log(lastIndexArray.lastIndexOf(2));
-// Output: 4, 5
-
-// Task 18
-let nums = [100,2,55,1,9];
-console.log(nums.sort());
-nums.sort((a,b)=>a-b);
-console.log(nums);
-// Output: [1,100,2,55,9], [1,2,9,55,100]
-
-// Task 19
-let letters = ["a","b","c","d"];
-letters.reverse();
-console.log(letters);
-// Output: ["d","c","b","a"]
-
-// Task 20
-let students = ["Rahul","Ajay","Kumar"];
-students.push("Naveen");
-students.splice(1,1);
-students.splice(1,0,"Arun");
-students.reverse();
-console.log(students);
-// Output: ["Naveen","Kumar","Arun","Rahul"]
-
-// Task 21
-let cart = ["Shoes","Watch","Phone"];
-cart.push("Laptop");
-cart.splice(1,1);
-console.log(cart.includes("Phone"));
-console.log("Total Items:", cart.length);
-console.log(cart);
-// Output: true, Total Items: 3, ["Shoes","Phone","Laptop"]
-
-// Task 22
-let employee = { name:"Naveen", role:"Web Developer", salary:"5LPA" };
-let { name, role, salary } = employee;
-console.log(name,role,salary);
-let copiedEmployee = { ...employee };
-copiedEmployee.salary = "8LPA";
-console.log("Original:", employee);
-console.log("Copied:", copiedEmployee);
-// Output: Naveen Web Developer 5LPA, Original salary 5LPA, Copied salary 8LPA
-
-// Task 23
-function company(empName,...skills){
- console.log("Employee Name:", empName);
- console.log("Skills:", skills);
- console.log("Total Skills:", skills.length);
-}
-company("Naveen","HTML","CSS","JS","React");
-// Output: Employee Name: Naveen, Skills: [HTML,CSS,JS,React], Total Skills: 4
-
-// Task 24
-let analyzerData = [1,2,3,4,5,6,7,8,9,10];
-let firstFive = analyzerData.slice(0,5);
-console.log(firstFive);
-analyzerData.reverse();
-console.log(analyzerData);
-console.log(analyzerData.includes(7));
-console.log(analyzerData.indexOf(10));
-// Output: [1,2,3,4,5], [10,9,8,7,6,5,4,3,2,1], true, 0
-
-// Task 25
-let users = [
- {name:"Rahul",role:"Developer"},
- {name:"Ajay",role:"Designer"},
- {name:"Kumar",role:"Tester"}
-];
-users.push({name:"Naveen",role:"Manager"});
-users.pop();
-let newUsers = [
- {name:"Arun",role:"HR"},
- {name:"Vijay",role:"Support"}
-];
-let finalUsers = [...users,...newUsers];
-for(let user of finalUsers){
- console.log(user.name);
-}
-finalUsers.reverse();
-console.log(finalUsers);
-// Output: Rahul, Ajay, Kumar, Arun, Vijay
+weatherPromise
+.then(data => console.log(data))
+.catch(error => console.log(error));// Output: Weather Data
